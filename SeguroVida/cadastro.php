@@ -58,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,9 +69,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>CareUp - Cadastro</title>
     <link rel="stylesheet" href="cadastro.css">
 </head>
+
 <body>
-    <nav class="navbar col-12 position-fixed navbar-expand-lg navbar-light bg-light border border-grey" style="z-index: 999;">
+    <nav class="navbar col-12 position-fixed navbar-expand-lg navbar-light bg-light border border-grey"
+        style="z-index: 999;">
         <div class="container-fluid">
+
             <div class="navbar-header">
                 <figure>
                     <a href="index.php">
@@ -79,9 +83,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </figure>
             </div>
             <ul class="nav navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="planos.php">Nossos Planos</a></li>
-                <li class="nav-item"><a class="nav-link" href="servicos.php">Serviços</a></li>
-                <li class="nav-item"><a class="nav-link" href="Sobre.php">Sobre a CareUp</a></li>
+                <!-- Dropdown Nossos Planos -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nossos Planos<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="planobasico.php">Plano Básico</a></li>
+                        <li><a href="planotop.php">Plano Top</a></li>
+                        <li><a href="planopremium.php">Plano Premium</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Sobre.php">Sobre a CareUp</a>
+                </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">Ajuda<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -135,4 +148,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
 </body>
+
 </html>

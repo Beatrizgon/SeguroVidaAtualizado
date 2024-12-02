@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
     <nav class="navbar col-12 position-fixed navbar-expand-lg navbar-light bg-light border border-grey"
         style="z-index: 999;">
@@ -25,8 +26,14 @@
                 </figure>
             </div>
             <ul class="nav navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="planos.php">Nossos Planos</a>
+                <!-- Dropdown Nossos Planos -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nossos Planos<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="planobasico.php">Plano Básico</a></li>
+                        <li><a href="planotop.php">Plano Top</a></li>
+                        <li><a href="planopremium.php">Plano Premium</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Sobre.php">Sobre a CareUp</a>
@@ -47,19 +54,26 @@
         </div>
     </nav>
 
-               
 
-<div class="container">
-  <h1>Fique à vontade para nos conhecer melhor nas redes sociais.</h1><br>
-  
-  <p><h3><a href="https://www.instagram.com/" target="blank">Instagram : @careup</a></h3></p><br> <!--"target" para abrir o link em uma nova janela-->
-  <p><h3><a href="https://www.facebook.com/login" target="blank">Facebook : CareUp</a></h3></p><br>
-  <p><h3><a href="https://web.whatsapp.com/" target="blanc">WhatsApp : CareUp</a></h3></p>
-<br>
-<br>
-  <button >VOLTAR</button>
-</div>
+
+    <div class="container">
+        <h1>Fique à vontade para nos conhecer melhor nas redes sociais.</h1><br>
+
+        <p>
+        <h3><a href="https://www.instagram.com/" target="blank">Instagram : @careup</a></h3>
+        </p><br> <!--"target" para abrir o link em uma nova janela-->
+        <p>
+        <h3><a href="https://www.facebook.com/login" target="blank">Facebook : CareUp</a></h3>
+        </p><br>
+        <p>
+        <h3><a href="https://web.whatsapp.com/" target="blanc">WhatsApp : CareUp</a></h3>
+        </p>
+        <br>
+        <br>
+        <button>VOLTAR</button>
+    </div>
 
 
 </body>
+
 </html>

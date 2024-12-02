@@ -26,9 +26,15 @@
         </figure>
       </div>
       <ul class="nav navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="planos.php">Nossos Planos</a>
-        </li>
+       <!-- Dropdown Nossos Planos -->
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nossos Planos<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="planobasico.php">Plano Básico</a></li>
+          <li><a href="planotop.php">Plano Top</a></li>
+          <li><a href="planopremium.php">Plano Premium</a></li>
+        </ul>
+      </li>
         <li class="nav-item">
           <a class="nav-link" href="Sobre.php">Sobre a CareUp</a>
         </li>
@@ -75,13 +81,13 @@
     </a>
   </div>
 
-  <div class="container"><br><br><br><br>
+  <div class="container" id="planos"><br><br><br><br>
     <h2 class="titulo" style="text-align: center; font-weight:300;">Sua saúde conectada ao que importa: <strong>praticidade</strong> e <strong>acessibilidade</strong></h2>
   </div><br><br>
 
   <div class="container text-center">
     <div class="row">
-      <a href="planos.php">
+      <a href="planobasico.php">
         <div class="col-sm-4">
           <div class="card1">
             <div style="position: absolute; bottom: 10px; left: 10px; right: 10px; background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 5px;">
@@ -93,7 +99,7 @@
         </div>
       </a>
 
-      <a href="planos.php">
+      <a href="planotop.php">
         <div class="col-sm-4">
           <div class="card2">
             <div style="position: absolute; bottom: 10px; left: 10px; right: 10px; background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 5px;">
@@ -105,7 +111,7 @@
         </div>
       </a>
 
-      <a href="planos.php">
+      <a href="planopremium.php">
         <div class="col-sm-4">
           <div class="card3">
             <div style="position: absolute; bottom: 10px; left: 10px; right: 10px; background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 5px;">

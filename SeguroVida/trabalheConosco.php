@@ -26,11 +26,14 @@
         </figure>
       </div>
       <ul class="nav navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="planos.php">Nossos Planos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="servicos.php">Serviços</a>
+        <!-- Dropdown Nossos Planos -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nossos Planos<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="planobasico.php">Plano Básico</a></li>
+            <li><a href="planotop.php">Plano Top</a></li>
+            <li><a href="planopremium.php">Plano Premium</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="Sobre.php">Sobre a CareUp</a>
@@ -52,6 +55,6 @@
   </nav>
 
   <div class="container text-center">
-  <div class="row">
-    <h1>Envie o seu currículo</h1>
-  <div class="form" style="border: 1px solid #ddd; padding: 20px; margin-bottom: 5px; border-radius: 8px;">
+    <div class="row">
+      <h1>Envie o seu currículo</h1>
+      <div class="form" style="border: 1px solid #ddd; padding: 20px; margin-bottom: 5px; border-radius: 8px;">

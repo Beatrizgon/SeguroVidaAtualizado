@@ -48,7 +48,7 @@
   </nav>
 
   <div class="container">
-    <h2 style="text-align: center; font-weight:300;">PLANOS</h2>
+    <h2 style="text-align: center; font-weight:300;"><strong>PLANOS</strong></h2>
   </div><br><br>
 
   <div class="container text-center">
@@ -122,6 +122,58 @@
       </div>
     </div>
   </div>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br>
+
+
+  <footer class="page-footer font-small blue p-5" style="background-color: rgb(16, 50, 161); color: white;">
+    <div class="text-center">
+      <div class="container">
+        <h2 id="contatos">Contatos</h2>
+        <p>Nos siga nas redes sociais e fique por dentro das novidades</p>
+
+        <div class="social-icons">
+          <a href="https://twitter.com/" target="_blank">
+            <i class="fab fa-twitter" style="color: white; font-size: 24px; margin-right: 15px;"></i>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank">
+            <i class="fab fa-facebook-f" style="color: white; font-size: 24px; margin-right: 15px;"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <i class="fab fa-instagram" style="color: white; font-size: 24px; margin-right: 15px;"></i>
+          </a>
+          <a href="https://br.pinterest.com/" target="_blank">
+            <i class="fab fa-pinterest" style="color: white; font-size: 24px; margin-right: 15px;"></i>
+          </a>
+        </div><br><br>
+
+        <div class="copyright">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-12">
+                <div class="copy-text text-center">
+                  <p>&copy; <a href="index.php" style="color: white;">CareUp</a> - Todos os Direitos Reservados.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-12">
+                <div class="copy-text text-center">
+                  <p style="color: rgba(255, 255, 255, 0.765);">Projeto Back-End 2024.2</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
 </body>

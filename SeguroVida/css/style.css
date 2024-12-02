@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: 18px;
+    height: 100%;
+    background-color: #f5f5f5;
+}
+
+.navbar {
+    font-family: "Poppins", sans-serif;
+    border-radius: 0;
+    font-weight: 600;
+    background-color: #ffffff;
+
+}
+
+footer {
+    margin-top: auto;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+}
+
+#Logo {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 70px;
+    width: 85px;
+}
+
+h2 {
+    font-weight: 200;
+}
+
+.card1 {
+    background: url('img/card1.jpg') no-repeat center center;
+    background-size: cover;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    height: 400px;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.card2 {
+    background: url('img/card2.png') no-repeat center center;
+    background-size: cover;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    height: 400px;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+}
+
+.card3 {
+    background: url('img/card3.jpg') no-repeat center center;
+    background-size: cover;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    height: 400px;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+section {
+    padding: 10px 0;
+}
+
+section .title {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+section .title::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+
+section .title::after {
+    position: absolute;
+    bottom: -12px;
+    font-size: 20px;
+    left: 50%;
+    background: #fff;
+    color: #0046d3;
+    padding: 5px;
+    transform: translateX(-50%);
+}
+
+.navbar .nav-item,
+.dropdown,
+.Cad,
+.Log {
+
+    margin-top: 25px;
+    font-size: 15px;
+    background-color: transparent !important;
+}
+
+.navbar .nav>li>a:hover {
+    background-color: transparent !important;
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+.about .title::after {
+    content: "Sobre a CareUp";
+}
+
+.about .title::before {
+    bottom: 0;
+}
+
+.about {
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+
+.about .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about .about-content .left {
+    width: 45%;
+}
+
+.about .about-content .right {
+    width: 55%;
+
+}
+
+.about .about-content .right p {
+    text-align: justify;
+    margin-right: 15px;
+}
+
+.about .about-content .left img {
+    margin-left: 40px;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.about .about-content .left img:hover {
+    transform: scale(1.04);
+}
