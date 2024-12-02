@@ -30,9 +30,6 @@
                     <a class="nav-link" href="planos.php">Nossos Planos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="servicos.php">Serviços</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="Sobre.php">Sobre a CareUp</a>
                 </li>
                 <li class="dropdown">
@@ -57,17 +54,12 @@
             <div class="about-content">
                 <div class="about-content">
                     <div class="column left">
-                            <img src="img/img1.jpeg" alt="">
-                        
+                        <img src="img/img1.jpeg" alt="">
+
                     </div>
                     <div class="column right">
                         <p style="text-indent: 2em;">Na Care Up, acreditamos que a saúde e a segurança devem ser acessíveis para todos, especialmente para os jovens que estão começando a construir suas histórias. Por isso, desenvolvemos um modelo de seguro de vida inovador e pensado exclusivamente para quem tem entre 18 e 25 anos, oferecendo soluções acessíveis, transparentes e livres de burocracia.</p>
-                        <p style="text-indent: 2em;">Entendemos que, para muitos jovens, o seguro de vida pode parecer algo distante ou desnecessário. Afinal, esta fase da vida é marcada por saúde, energia e planos para o futuro. Mas é exatamente nesse momento que cuidar de si mesmo pode fazer toda a diferença. Nossa missão é desmistificar o seguro de vida, mostrando como ele pode ser uma escolha inteligente, proporcionando proteção, tranquilidade e um apoio financeiro estratégico, caso necessário.</p>
                         <p style="text-indent: 2em;">Nosso diferencial está em atender jovens que não lidam com doenças crônicas e buscam um serviço flexível, com preços que cabem no bolso e benefícios que realmente fazem sentido para o dia a dia. Na Care Up, você não paga pelo que não precisa. Oferecemos um seguro simples, moderno e focado no que é essencial para sua fase de vida.</p>
-                        <p style="text-indent: 2em;">Por que escolher a Care Up?<br><br>
-                            Soluções sob medida: Planos ajustados às necessidades reais dos jovens.<br>
-                            Preços acessíveis: Tarifas justas e compatíveis com seu orçamento.>br>
-                            Foco no bem-estar: Benefícios que vão além da proteção, como programas de saúde preventiva e suporte em emergências.</p>
                         <p style="text-indent: 2em;"> Tecnologia intuitiva: Contratação e acompanhamento 100% online, com simplicidade e praticidade.
                             Na Care Up, não vendemos só um seguro. Oferecemos tranquilidade e liberdade para você viver plenamente cada momento, sabendo que está protegido de forma consciente e responsável.
 
@@ -76,7 +68,7 @@
                     </div>
                 </div>
             </div>
-    </section>        
+    </section>
 
 </body>
 

@@ -8,7 +8,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
 </head>
@@ -30,9 +29,6 @@
           <a class="nav-link" href="planos.php">Nossos Planos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="servicos.php">Serviços</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="Sobre.php">Sobre a CareUp</a>
         </li>
         <li class="dropdown">
@@ -52,7 +48,7 @@
   </nav>
 
   <div class="container">
-    <h2 style="text-align: center;">PLANOS</h2>
+    <h2 style="text-align: center; font-weight:300;">PLANOS</h2>
   </div><br><br>
 
   <div class="container text-center">
@@ -72,6 +68,9 @@
             <li>Descontos em farmácias: Até 25%</li>
           </ul>
           <p><em>Indicado para jovens saudáveis que buscam prevenção.</em></p>
+          <a href="cadastro.php"> 
+            <input type="button" value="Assinar">
+          </a>
         </div>
       </div>
 
@@ -91,6 +90,10 @@
             <li>Recompensas por check-ups</li>
           </ul>
           <p><em>Indicado para jovens que buscam um plano equilibrado.</em></p>
+          <a href="cadastro.php"> 
+            <input type="button" value="Assinar">
+          </a>
+         
         </div>
       </div>
 
@@ -112,6 +115,9 @@
             <li>Cobertura de viagens</li>
           </ul>
           <p><em>Indicado para jovens que desejam uma cobertura completa.</em></p>
+          <a href="cadastro.php"> 
+            <input type="button" value="Assinar">
+          </a>
         </div>
       </div>
     </div>

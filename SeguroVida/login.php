@@ -33,9 +33,6 @@
                     <a class="nav-link" href="planos.php">Nossos Planos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="servicos.php">Serviços</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="Sobre.php">Sobre a CareUp</a>
                 </li>
                 <li class="dropdown">
