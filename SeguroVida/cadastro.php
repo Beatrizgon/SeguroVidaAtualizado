@@ -18,6 +18,9 @@ if ($conn->connect_error) {
     die("Erro na conexão com o banco de dados: " . $conn->connect_error);
 }
 
+// Variável para armazenar mensagens de feedback ao usuário
+$mensagem = "";
+
 // Processa o formulário se o método for POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['nome'];
@@ -26,24 +29,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $telefone = $_POST['telefone'];
     $plano = $_POST['plano'];
     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-    
-   
 
-    // Insere os dados no banco
-    $sql = "INSERT INTO usuarios (nome, datanasci, email, telefone, plano, senha)
-            VALUES ('$nome', '$datanasci', '$email', '$telefone','$plano', '$senha')";
+    // Verifica se o e-mail já existe
+    $sql = "SELECT * FROM usuarios WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if ($conn->query($sql) === TRUE) {
-        $mensagem =  "<p class='success'>Cadastro realizado com sucesso!</p>";
+    if ($result->num_rows > 0) {
+        // E-mail duplicado encontrado
+        $mensagem = "<p class='alert alert-warning'>O e-mail informado já está cadastrado. Por favor, utilize outro.</p>";
     } else {
-        echo "<p class='error'>Erro ao cadastrar o usuário: " . $conn->error . "</p>";
+        // Insere os dados no banco
+        $sql = "INSERT INTO usuarios (nome, datanasci, email, telefone, plano, senha) VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssssss", $nome, $datanasci, $email, $telefone, $plano, $senha);
+
+        if ($stmt->execute()) {
+            $mensagem = "<p class='alert alert-success'>Cadastro realizado com sucesso!</p>";
+        } else {
+            $mensagem = "<p class='alert alert-danger'>Erro ao cadastrar o usuário: " . $stmt->error . "</p>";
+        }
     }
+    $stmt->close();
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,15 +65,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>CareUp -Cadastro</title>
+    <title>CareUp - Cadastro</title>
     <link rel="stylesheet" href="cadastro.css">
 </head>
-
 <body>
-    <nav class="navbar col-12 position-fixed navbar-expand-lg navbar-light bg-light border border-grey"
-        style="z-index: 999;">
+    <nav class="navbar col-12 position-fixed navbar-expand-lg navbar-light bg-light border border-grey" style="z-index: 999;">
         <div class="container-fluid">
-
             <div class="navbar-header">
                 <figure>
                     <a href="index.php">
@@ -68,15 +79,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </figure>
             </div>
             <ul class="nav navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="planos.php">Nossos Planos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="servicos.php">Serviços</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Sobre.php">Sobre a CareUp</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="planos.php">Nossos Planos</a></li>
+                <li class="nav-item"><a class="nav-link" href="servicos.php">Serviços</a></li>
+                <li class="nav-item"><a class="nav-link" href="Sobre.php">Sobre a CareUp</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">Ajuda<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -93,7 +98,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </nav>
 
-
     <div class="container">
         <h1>Cadastro de Usuário</h1>
         <?php if (!empty($mensagem)) echo $mensagem; ?>
@@ -108,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="form-group">
                 <label for="email">E-mail:</label>
-                <input type="mail" id="email" name="email" class="form-control" placeholder="seuemail@exemplo.com" required>
+                <input type="email" id="email" name="email" class="form-control" placeholder="seuemail@exemplo.com" required>
             </div>
             <div class="form-group">
                 <label for="telefone">Telefone:</label>
@@ -131,5 +135,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
 </body>
-
 </html>
