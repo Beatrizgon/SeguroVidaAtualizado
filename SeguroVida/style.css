@@ -1,0 +1,118 @@
+
+.navbar {
+    font-family: 'Roboto', sans-serif;
+    border-radius: 0; 
+    font-weight: 600;
+    
+}
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+  }
+  
+
+#Logo {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 70px; 
+    width: 85px;
+}
+
+section {
+    padding: 10px 0;
+}
+
+section .title {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+section .title::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+
+section .title::after {
+    position: absolute;
+    bottom: -12px;
+    font-size: 20px;
+    left: 50%;
+    background: #fff;
+    color: #0046d3;
+    padding: 5px;
+    transform: translateX(-50%);
+}
+
+.navbar .nav-item,
+.dropdown,
+.Cad,
+.Log {
+   
+    margin-top: 25px;
+    font-size: 15px;
+    background-color: transparent !important; 
+}
+
+.navbar .nav > li > a:hover{
+    background-color: transparent !important; 
+    color: inherit !important; 
+    text-decoration: none !important; 
+}
+.about .title::after {
+    content: "Sobre a CareUp";
+}
+
+.about .title::before {
+    bottom: 0;
+}
+
+.about {
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+
+.about .about-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about .about-content .left {
+    width: 45%;
+}
+
+.about .about-content .right {
+    width: 55%;
+    
+}
+
+.about .about-content .right p {
+    text-align: justify;
+    margin-right: 15px;
+}
+
+.about .about-content .left img {
+    margin-left: 40px;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.about .about-content .left img:hover {
+    transform: scale(1.04);
+}

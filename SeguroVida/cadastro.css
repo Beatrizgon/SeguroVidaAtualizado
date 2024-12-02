@@ -1,0 +1,106 @@
+/* Estilo geral */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+
+.navbar {
+    font-family: 'Roboto', sans-serif;
+    border-radius: 0; 
+    font-weight: 600;
+}
+
+#Logo {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 70px; 
+    width: 85px;
+}
+
+.navbar .nav-item,
+.dropdown,
+.Cad,
+.Log {
+   
+    margin-top: 25px;
+    font-size: 15px;
+    background-color: transparent !important; 
+}
+
+.navbar .nav > li > a:hover{
+    background-color: transparent !important; 
+    color: inherit !important; 
+    text-decoration: none !important; 
+}
+
+
+/* Container */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Título */
+.container h1 {
+    color: #1e90ff;
+    margin-bottom: 20px;
+}
+
+/* Formulário */
+form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #1e90ff;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border: 1px solid #1e90ff;
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+}
+
+/* Botão */
+.btn {
+    width: 100%;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1c86ee;
+}
