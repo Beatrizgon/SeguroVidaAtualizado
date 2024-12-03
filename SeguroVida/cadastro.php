@@ -1,59 +1,69 @@
 <?php
+require 'db.php';
 // Ativa exibição de erros (para desenvolvimento)
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Configuração do banco de dados
-$servername = "localhost"; // Altere para seu servidor
-$username = "root";
-$password = "";
-$dbname = "careup_db";
 
-// Conexão com o banco de dados
-$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verifica se a conexão foi bem-sucedida
-if ($conn->connect_error) {
-    die("Erro na conexão com o banco de dados: " . $conn->connect_error);
-}
 
-// Variável para armazenar mensagens de feedback ao usuário
-$mensagem = "";
+    $dsn = "mysql:host=localhost;dbname=careup_db;charset=utf8mb4";
+    $username = "root";
+    $password = "";
+    try {
+    // Conexão com o banco de dados
+    $pdo = new PDO($dsn, $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// Processa o formulário se o método for POST
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nome = $_POST['nome'];
-    $datanasci = $_POST['datanasci'];
-    $email = $_POST['email'];
-    $telefone = $_POST['telefone'];
-    $plano = $_POST['plano'];
-    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
-    // Verifica se o e-mail já existe
-    $sql = "SELECT * FROM usuarios WHERE email = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
 
-    if ($result->num_rows > 0) {
-        // E-mail duplicado encontrado
-        $mensagem = "<p class='alert alert-warning'>O e-mail informado já está cadastrado. Por favor, utilize outro.</p>";
-    } else {
-        // Insere os dados no banco
-        $sql = "INSERT INTO usuarios (nome, datanasci, email, telefone, plano, senha) VALUES (?, ?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssssss", $nome, $datanasci, $email, $telefone, $plano, $senha);
+    // Processa o formulário se o método for POST
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $nome = $_POST['nome'];
+        $datanasci = $_POST['datanasci'];
+        $email = $_POST['email'];
+        $telefone = $_POST['telefone'];
+        $plano = $_POST['plano'];
+        $senha = $_POST['senha'];
 
-        if ($stmt->execute()) {
-            $mensagem = "<p class='alert alert-success'>Cadastro realizado com sucesso!</p>";
+        $senha_hash = password_hash($senha, PASSWORD_DEFAULT); // Criptografia da senha
+        echo $senha_hash;
+        // Verifica se o e-mail já existe
+        $sql = "SELECT COUNT(*) FROM usuarios WHERE email = :email";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(['email' => $email]);
+
+        if ($stmt->fetchColumn() > 0) {
+            // E-mail duplicado encontrado
+            $mensagem = "<p class='alert alert-warning'>O e-mail informado já está cadastrado. Por favor, utilize outro.</p>";
         } else {
-            $mensagem = "<p class='alert alert-danger'>Erro ao cadastrar o usuário: " . $stmt->error . "</p>";
+            // Insere os dados no banco usando placeholders nomeados
+            $sql = "INSERT INTO usuarios (nome, datanasci, email, telefone, plano, senha) 
+                    VALUES (:nome, :datanasci, :email, :telefone, :plano, :senha)";
+            $stmt = $pdo->prepare($sql);
+
+            $stmt->execute([
+                'nome' => $nome,
+                'datanasci' => $datanasci,
+                'email' => $email,
+                'telefone' => $telefone,
+                'plano' => $plano,
+                'senha' => $senha_hash // Aqui especificamos o valor para a coluna senha
+            ]);
+
+            if ($stmt->rowCount() > 0) {
+                $mensagem = "<p class='alert alert-success'>Cadastro realizado com sucesso!</p>";
+            } else {
+                $mensagem = "<p class='alert alert-danger'>Erro ao cadastrar. Por favor, tente novamente.</p>";
+            }
         }
     }
-    $stmt->close();
+} catch (PDOException $e) {
+    echo "Erro na conexão ou execução: " . $e->getMessage();
 }
+
 ?>
 
 <!DOCTYPE html>
