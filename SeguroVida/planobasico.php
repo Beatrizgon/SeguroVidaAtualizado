@@ -1,3 +1,16 @@
+<?php
+
+require 'db.php';
+
+$sql = "SELECT * FROM usuarios";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+session_start(); 
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -49,9 +62,14 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="Cad"><a href="#"><span class="glyphicon glyphicon-user"></span> Seja Cliente</a></li>
-        <li class="Log"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
-      </ul>
+    <?php if (isset($_SESSION['nome'])): ?>
+        <li><span class="navbar-text" style="margin-bottom: 30px;">Olá, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</span></li>
+        <li class="Log"><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Sair</a></li>
+    <?php else: ?>
+        <li class="Cad"><a href="cadastro.php"><span class="glyphicon glyphicon-user"></span> Seja Cliente</a></li>
+        <li class="Log"><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
+    <?php endif; ?>
+</ul>
     </div>
   </nav>
 
