@@ -64,7 +64,7 @@ session_start();
       </ul>
       <ul class="nav navbar-nav navbar-right">
     <?php if (isset($_SESSION['nome'])): ?>
-        <li><span class="navbar-text">Olá, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</span></li>
+        <li><span class="navbar-text" style="margin-bottom: 30px;">Olá, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</span></li>
         <li class="Log"><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Sair</a></li>
     <?php else: ?>
         <li class="Cad"><a href="cadastro.php"><span class="glyphicon glyphicon-user"></span> Seja Cliente</a></li>
