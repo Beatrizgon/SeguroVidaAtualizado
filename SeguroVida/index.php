@@ -41,7 +41,7 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="">Ajuda<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="duvidas.php">Dúvidas</a></li>
+            <li><a href="duvidas.php">Dúvidas teste</a></li>
             <li><a href="trabalheConosco.php">Trabalhe Conosco</a></li>
             <li><a href="redesSociais.php">Redes Sociais</a></li>
           </ul>
