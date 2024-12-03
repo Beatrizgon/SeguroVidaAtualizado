@@ -1,6 +1,49 @@
 <?php
+require 'db.php'; 
+// require_once 'functions.php'; 
+session_start(); 
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+
+
+ 
+
+    // Busca o usuário pelo email
+    $sql = "SELECT * FROM usuarios WHERE email = :email";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['email' => $email]);
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+    
+
+
+    // Verifica se o usuário existe e se a senha está correta
+    if ($usuario && password_verify($senha, $usuario['senha'])) {
+        
+
+
+
+        // Armazena os dados do usuário na sessão
+        $_SESSION['usuario_id'] = $usuario['id']; 
+        $_SESSION['nome'] = $usuario['nome']; 
+        $_SESSION['plano'] = $usuario['plano'];
+
+        // Redireciona para a página inicial
+        header("Location: index.php");
+        echo "Login bem-sucedido! Usuário: " . $_SESSION['nome'];
+        exit();
+    } else {
+        // Se o login falhar, pode exibir uma mensagem de erro (opcional)
+        $erro = "Email ou senha inválidos.";
+        //echo $erro;
+    }
+}
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,6 +55,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <title>CareUp - Login</title>
     <link rel="stylesheet" href="cadastro.css">
 </head>
@@ -60,7 +104,12 @@
 
     <div class="container">
         <h1>Login</h1>
-        <form action="login.php" method="post">
+
+        <?php if (isset($erro)): ?>
+        <p style="color: red;"><?= $erro; ?></p>
+    <?php endif; ?>
+
+        <form action="login.php" method="POST">
             <div class="form-group">
                 <label for="email">E-mail:</label>
                 <input type="mail" id="email" name="email" class="form-control" placeholder="seuemail@exemplo.com" required>

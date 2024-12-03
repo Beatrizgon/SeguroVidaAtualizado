@@ -1,3 +1,17 @@
+<?php
+
+require 'db.php';
+
+$sql = "SELECT * FROM usuarios";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+session_start(); 
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,6 +23,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
 
 </head>
@@ -48,9 +63,16 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+    <?php if (isset($_SESSION['nome'])): ?>
+        <li><span class="navbar-text" style="margin-bottom: 30px;">Olá, <?php echo htmlspecialchars($_SESSION['nome']); ?>!</span></li>
+        <li class="Log"><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Sair</a></li>
+    <?php else: ?>
         <li class="Cad"><a href="cadastro.php"><span class="glyphicon glyphicon-user"></span> Seja Cliente</a></li>
         <li class="Log"><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
-      </ul>
+    <?php endif; ?>
+</ul>
+
+     
     </div>
   </nav>
   <div id="carouselExample" class="carousel slide" data-ride="carousel">
