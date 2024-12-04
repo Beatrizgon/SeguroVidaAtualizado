@@ -74,6 +74,28 @@ h2 {
     overflow: hidden;
     margin-bottom: 20px;
 }
+.card4 {
+    background: url('img/girl.avif') no-repeat center center;
+    background-size: cover;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    height: 400px;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.card5 {
+    background: url('img/guys.webp') no-repeat center center;
+    background-size: cover;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    height: 400px;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
 
 section {
     padding: 10px 0;
@@ -114,11 +136,15 @@ section .title::after {
 .navbar .nav-item,
 .dropdown,
 .Cad,
-.Log {
+.Log  {
 
     margin-top: 25px;
     font-size: 15px;
     background-color: transparent !important;
+}
+
+.Cad {
+    margin-left: 27em;
 }
 
 .navbar .nav>li>a:hover {

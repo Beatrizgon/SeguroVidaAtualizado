@@ -11,20 +11,19 @@ session_start();
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-  <title>CareUp: Seguro de Vida, Saúde Desde Cedo | CareUp</title>
+  <title>CareUp - Sobre</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="grupobasico.css">
 
 </head>
 
@@ -94,155 +93,28 @@ session_start();
             <li class="Log"><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
           <?php endif; ?>
         </ul>
-
-
     </div>
   </nav>
-  <div id="carouselExample" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExample" data-slide-to="1"></li>
-    </ol>
 
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="img/slide2.png" alt="Slide 1" class="d-block w-100">
-      </div>
-      <div class="item">
-        <img src="img/slide1.png" alt="Slide 2" class="d-block w-100">
-        <div class="carousel-caption">
+  <section class="about" id="about">
+    <div class="max-width">
+      <h2 class="title">Grupo Básico</h2>
+      <div class="about-content">
+        <div class="about-content">
+          <div class="column left">
+            <img src="img/medico1.jpg.crdownload" alt="">
 
-        </div>
-      </div>
-    </div>
-
-    <a class="left carousel-control" href="#carouselExample" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Anterior</span>
-    </a>
-    <a class="right carousel-control" href="#carouselExample" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Próximo</span>
-    </a>
-  </div>
-
-  <div class="container" id="planos"><br><br><br><br>
-    <h1 class="titulo" style="text-align: center; font-weight:400;">PLANOS DE SAÚDE</h1>
-  </div><br><br>
-
-  <div class="container text-center">
-    <div class="row">
-      <a href="planobasico.php">
-        <div class="col-sm-4">
-          <div class="card1">
-            <div style="position: absolute; bottom: 10px; left: 10px; right: 10px; background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 5px;">
-              <h4>Plano de Sáude</h4>
-              <p><strong>CareUp Start</strong></p>
-              <p>Prático e Econômico</p>
-            </div>
           </div>
-        </div>
-      </a>
+          <div class="column right">
+            <p style="text-indent: 2em;">O plano CareUp Vida Coletivo Essencial oferece uma cobertura de R$ 30.000 por pessoa para até 5 membros da família, garantindo segurança e tranquilidade para os entes queridos. Além disso, oferece assistência funeral básica e um desconto em consultas psicológicas para os membros da família, promovendo bem-estar e apoio emocional.</p>
+            <p style="text-indent: 2em;"><br>Mensalidade: A partir de R$ 35,90/mês<br>- Cobertura e Benefícios; <br>- Cobertura individual para até 5 membros: R$ 25.000 por pessoa.; <br>-Assistência funeral básica para todos os membros.; <br>- Desconto em consultas psicológicas para os membros da família;
+            <p>Indicação<br>
+              Este plano é ideal para pequenos grupos familiares que buscam uma proteção essencial sem comprometer o orçamento, proporcionando cobertura básica e benefícios que atendem às necessidades da família em momentos delicados..</p>
 
-      <a href="planotop.php">
-        <div class="col-sm-4">
-          <div class="card2">
-            <div style="position: absolute; bottom: 10px; left: 10px; right: 10px; background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 5px;">
-              <h4>Plano de Sáude</h4>
-              <p><strong>CareUp Active</strong></p>
-              <p>Odontologia</p>
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <a href="planopremium.php">
-        <div class="col-sm-4">
-          <div class="card3">
-            <div style="position: absolute; bottom: 10px; left: 10px; right: 10px; background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 5px;">
-
-              <h4>Plano de Sáude</h4>
-              <p><strong>CareUp Plus</strong></p>
-              <p>Viagens</p>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-
-  <div class="container" id="planos"><br><br><br><br>
-    <h1 class="titulo" style="text-align: center; font-weight:400;">SEGUROS</h1>
-  </div><br><br>
-
-  <div class="container text-center">
-    <div class="row">
-
-      <div class="col-sm-6">
-        <div class="card4" data-toggle="modal" data-target="#seguroIndividualModal">
-          <div style="position: absolute; bottom: 10px; left: 10px; right: 10px; background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 5px;">
-            <h4>Seguro</h4>
-            <p><strong>Individual</strong></p>
-            <p>Para jovens que desejam segurança e tranquilidade</p>
           </div>
         </div>
       </div>
-
-
-      <div class="col-sm-6">
-        <div class="card5" data-toggle="modal" data-target="#seguroGrupoModal">
-          <div style="position: absolute; bottom: 10px; left: 10px; right: 10px; background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 5px;">
-            <h4>Seguro</h4>
-            <p><strong>Grupo</strong></p>
-            <p>Para pequenos grupos, como amigos ou familiares</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal para Seguro Individual -->
-  <div class="modal fade" id="seguroIndividualModal" tabindex="-1" role="dialog" aria-labelledby="seguroIndividualModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="seguroIndividualModalLabel">Escolha seu Seguro Individual</h4>
-        </div>
-        <div class="modal-body">
-          <p>Escolha o plano de seguro que deseja saber mais:</p>
-          <ul>
-            <li><a href="segurobasico.php" class="btn btn-primary w-100">Seguro Básico</a></li><br>
-            <li><a href="segurotop.php" class="btn btn-primary w-100 mt-2">Seguro Top</a></li><br>
-            <li><a href="seguropremium.php" class="btn btn-primary w-100 mt-2">Seguro Premium</a></li><br>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal para Seguro de Grupo -->
-  <div class="modal fade" id="seguroGrupoModal" tabindex="-1" role="dialog" aria-labelledby="seguroGrupoModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="seguroGrupoModalLabel">Escolha seu Seguro de Grupo</h4>
-        </div>
-        <div class="modal-body">
-          <p>Escolha o plano de seguro que deseja saber mais:</p>
-          <ul>
-            <li><a href="Grupobasico.php" class="btn btn-primary w-100">Grupo Básico</a></li><br>
-            <li><a href="Grupotop.php" class="btn btn-primary w-100 mt-2">Grupo Top</a></li><br>
-            <li><a href="Grupopremium.php" class="btn btn-primary w-100 mt-2">Grupo Premium</a></li><br>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
+  </section>
   <br><br><br><br><br>
   <br><br><br><br><br>
   <br><br><br><br><br><br>
@@ -296,7 +168,6 @@ session_start();
     </div><br><br>
 
   </footer>
-
 </body>
 
 </html>

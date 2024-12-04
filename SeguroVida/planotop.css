@@ -178,3 +178,76 @@ section .title::after {
 .about .about-content .left img:hover {
     transform: scale(1.04);
 }
+
+@media (max-width: 991px) {
+    .navbar .max-width {
+        padding: 0 50px;
+    }
+
+    .about .about-content .column-right {
+        width: 35%;
+        margin-top: 30px;
+    }
+
+    .about .about-content p {
+        text-align: justify;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 944px) {
+    .max-width {
+        max-width: 800px;
+        padding: 0 50px;
+    }
+
+    .about .about-content .column {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+
+    .about .about-content .column-right {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .about .about-content .column-right .text {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 20px;
+    }
+
+    .about .about-content p {
+        text-align: justify;
+        width: 100%;
+    }
+
+    .about .about-content .card {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 690px) {
+    
+    .about .about-content .card {
+        margin-left: 5px;
+    }
+    footer {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+
+    footer {
+        width: 100%;
+    }
+
+    @media (max-width: 300px) {
+        footer {
+            width: 100%;
+        }
+    }
+}

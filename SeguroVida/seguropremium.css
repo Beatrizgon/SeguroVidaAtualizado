@@ -132,7 +132,7 @@ section .title::after {
 }
 
 .about .title::after {
-    content: "Sobre a CareUp";
+    content: "Vida Premium";
 }
 
 .about .title::before {
@@ -163,6 +163,7 @@ section .title::after {
 .about .about-content .right p {
     text-align: justify;
     margin-right: 40px;
+    font-size: 15px;
 }
 
 .about .about-content .left img {
@@ -170,13 +171,14 @@ section .title::after {
     width: 400px;
     height: 400px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 20%;
     transition: all 0.3s ease;
 }
 
 .about .about-content .left img:hover {
     transform: scale(1.04);
 }
+
 
 @media (max-width: 991px) {
     .navbar .max-width {
