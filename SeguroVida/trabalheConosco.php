@@ -1,34 +1,23 @@
-<?php
-
-require 'db.php';
-
-$sql = "SELECT * FROM usuarios";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-$usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-session_start();
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-  <title>CareUp - Trabalhe Conosco</title>
+<title>CareUp - Trabalhe Conosco</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="trabalhe.css">
 
+  <style>
+  </style>
 </head>
 
 <body>
-  <nav class="navbar col-12 position-fixed navbar-expand-lg navbar-light bg-light border border-grey"
+<nav class="navbar col-12 position-fixed navbar-expand-lg navbar-light bg-light border border-grey"
     style="z-index: 999;">
     <div class="container-fluid">
 
@@ -93,11 +82,114 @@ session_start();
             <li class="Log"><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
           <?php endif; ?>
         </ul>
+
     </div>
   </nav>
 
-  <div class="container text-center">
-    <div class="row">
-      <h1>Envie o seu currículo</h1>
-      <div class="form" style="border: 1px solid #ddd; padding: 20px; margin-bottom: 5px; border-radius: 8px;">
+  <div class="container form-container">
+    <div class="form-header text-center">
+      <h2>Trabalhe Conosco</h2>
+      <p>Preencha o formulário abaixo e envie seu currículo. Junte-se à equipe CareUp!</p>
+    </div>
+    <form action="processar_curriculo.php" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" class="form-control" id="nome" name="nome" required>
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="telefone">Telefone:</label>
+        <input type="tel" class="form-control" id="telefone" name="telefone" required>
+      </div>
+      <div class="form-group">
+        <label for="cargo">Cargo Desejado:</label>
+        <select class="form-control" id="cargo" name="cargo" required>
+          <option value="">Selecione...</option>
+          <option value="Atendimento ao Cliente">Atendimento ao Cliente</option>
+          <option value="TI">TI</option>
+          <option value="Administração">Administração</option>
+          <option value="Outros">Outros</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="experiencia">Fale um pouco sobre sua experiência profissional:</label>
+        <textarea class="form-control" id="experiencia" name="experiencia" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="arquivo">Envie seu currículo (PDF):</label>
+        <input type="file" class="form-control" id="arquivo" name="arquivo" accept=".pdf" required>
+      </div>
+      <div class="form-group">
+        <label>Você está disponível para início imediato?</label><br>
+        <label class="radio-inline">
+          <input type="radio" name="disponibilidade" value="Sim" required> Sim
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="disponibilidade" value="Não"> Não
+        </label>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </div>
+    </form>
+  </div>
 
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br><br>
+
+
+  <footer class="page-footer font-small blue p-5" style="background-color: rgb(16, 50, 161); color: white;">
+    <div class="text-center">
+      <div class="container">
+        <h2 id="contatos">Contatos</h2><br>
+        <p>Nos siga nas redes sociais e fique por dentro das novidades</p><br>
+
+        <div class="social-icons">
+          <a href="https://twitter.com/" target="_blank">
+            <i class="fab fa-twitter" style="color: white; font-size: 24px; margin-right: 15px;"></i>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank">
+            <i class="fab fa-facebook-f" style="color: white; font-size: 24px; margin-right: 15px;"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <i class="fab fa-instagram" style="color: white; font-size: 24px; margin-right: 15px;"></i>
+          </a>
+          <a href="https://br.pinterest.com/" target="_blank">
+            <i class="fab fa-pinterest" style="color: white; font-size: 24px; margin-right: 15px;"></i>
+          </a>
+        </div><br><br>
+
+        <div class="copyright">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-12">
+                <div class="copy-text text-center">
+                  <p>&copy; <a href="index.php" style="color: white;">CareUp</a> - Todos os Direitos Reservados.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><br>
+
+        <div class="copyright">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-12">
+                <div class="copy-text text-center">
+                  <p style="color: rgba(255, 255, 255, 0.765);">Projeto Back-End 2024.2</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><br><br>
+
+  </footer>
+</body>
+
+</html>

@@ -1,30 +1,25 @@
 <?php
-
 require 'db.php';
-
-$sql = "SELECT * FROM usuarios";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-$usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 session_start();
-
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-  <title>CareUp - Dúvidas</title>
+  <title>CareUp: Seguro de Vida, Saúde Desde Cedo | CareUp</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="duvidas.css">
 
+  <style>
+
+  </style>
 </head>
 
 <body>
@@ -93,37 +88,38 @@ session_start();
             <li class="Log"><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
           <?php endif; ?>
         </ul>
+
+
     </div>
   </nav>
 
-  <div class="container">
-    <h1 style="text-align: center;">Dúvidas Frequentes</h1>
-  </div><br><br>
-
-  <div class="container">
-    <h3 style="text-align: center;">Qual é o melhor plano para alguém que viaja mais?</h3>
-  </div><br>
-  <div class="container">
-    <h3 style="text-align: center;">Os planos tem fidelidade de quanto tempo?</h3>
-  </div><br>
-  <div class="container">
-    <h3 style="text-align: center;">Quanto tempo demora para o plano validar após o pagamento?</h3>
-  </div><br>
-  <div class="container">
-    <h3 style="text-align: center;">Por que devo escolher a CareUp?</h3>
-  </div><br>
-  <div class="container">
-    <h3 style="text-align: center;">PERGUNTA</h3>
-  </div><br>
-  <div class="container">
-    <h3 style="text-align: center;">PERGUNTA</h3>
-  </div><br>
-  <div class="container">
-    <h3 style="text-align: center;">PERGUNTA</h3>
-  </div><br>
-  <div class="container">
-    <h3 style="text-align: center;">PERGUNTA</h3>
-  </div><br>
+  <div class="container faq-section">
+    <div class="faq-header">
+      <h2>Dúvidas Frequentes</h2>
+    </div>
+    <div id="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">Qual é o melhor plano para quem viaja com frequência?</div>
+        <div class="faq-answer">O plano Premium é ideal para viajantes frequentes, pois cobre emergências médicas internacionais e assistência 24/7!</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Os planos têm fidelidade?</div>
+        <div class="faq-answer">Não exigimos fidelidade! Você pode cancelar ou mudar de plano a qualquer momento, sem burocracia.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Quanto tempo demora para validar o plano após o pagamento?</div>
+        <div class="faq-answer">Após a confirmação do pagamento, seu plano é ativado em até 24 horas. Rápido, prático e seguro!</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Por que devo escolher a CareUp?</div>
+        <div class="faq-answer">Escolha a CareUp porque combinamos preço acessível com cobertura completa, além de um atendimento humano e ágil!</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Os seguros cobrem acidentes de trabalho?</div>
+        <div class="faq-answer">Sim, nossos planos Top e Premium incluem cobertura para acidentes de trabalho em diversas profissões.</div>
+      </div>
+    </div>
+  </div>
 
   <br><br><br><br><br>
   <br><br><br><br><br>
@@ -178,3 +174,16 @@ session_start();
     </div><br><br>
 
   </footer>
+
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        faqItem.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+
+</html>
