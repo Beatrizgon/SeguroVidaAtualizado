@@ -21,9 +21,9 @@ session_start();
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="redes.css">
 
 </head>
 
@@ -93,26 +93,27 @@ session_start();
             <li class="Log"><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
           <?php endif; ?>
         </ul>
+
     </div>
   </nav>
 
-
-
-  <div class="container">
-    <h1>Fique à vontade para nos conhecer melhor nas redes sociais.</h1><br>
-
-    <p>
-    <h3><a href="https://www.instagram.com/" target="blank">Instagram : @careup</a></h3>
-    </p><br> <!--"target" para abrir o link em uma nova janela-->
-    <p>
-    <h3><a href="https://www.facebook.com/login" target="blank">Facebook : CareUp</a></h3>
-    </p><br>
-    <p>
-    <h3><a href="https://web.whatsapp.com/" target="blanc">WhatsApp : CareUp</a></h3>
-    </p>
-    <br>
-    <br>
-    <button>VOLTAR</button>
+  <!-- Conteúdo principal -->
+  <div class="container mt-5 pt-5">
+    <h1 class="text-center mb-4">Fique à vontade para nos conhecer melhor nas redes sociais</h1>
+    <div class="list-group">
+      <a href="https://www.instagram.com/" target="_blank" class="list-group-item">
+        <i class="fab fa-instagram text-danger"></i> Instagram: @careup
+      </a>
+      <a href="https://www.facebook.com/" target="_blank" class="list-group-item">
+        <i class="fab fa-facebook text-primary"></i> Facebook: CareUp
+      </a>
+      <a href="https://web.whatsapp.com/" target="_blank" class="list-group-item">
+        <i class="fab fa-whatsapp text-success"></i> WhatsApp: CareUp
+      </a>
+    </div>
+    <div class="text-center mt-4">
+      <a href="index.php" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Voltar</a>
+    </div>
   </div>
 
   <br><br><br><br><br>
@@ -168,7 +169,6 @@ session_start();
     </div><br><br>
 
   </footer>
-
 
 </body>
 
