@@ -1,4 +1,5 @@
 # CareUp: Seguro Médico e Planos de Saúde para Jovens  
+### Integrantes do grupo de desenvolvimento: Beatriz dos Prazeres, Roberta Fernandes, Guilherme, Liang e Yhuri.
 
 ## Sobre o Projeto  
 CareUp é um site voltado para oferecer seguros médicos e planos de saúde acessíveis para jovens entre 18 e 25 anos. O objetivo é facilitar o acesso a esses serviços, atendendo às limitações econômicas e culturais dessa faixa etária, enquanto conscientiza sobre a importância do cuidado com a saúde.  
